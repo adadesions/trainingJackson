@@ -30,3 +30,16 @@
 *.exe
 *.out
 *.app
+
+# CMake
+CMakeCache.txt
+*.cmake
+./CMakeFiles/*
+
+#dlib
+./dlib_build/*
+./build/*
+
+# Others
+Makefile
+./.vscode/*
