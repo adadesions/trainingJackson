@@ -23,6 +23,8 @@ dlib/image_processing/render_face_detections.h
 -
 dlib/image_processing.h
 -
+dlib/image_transforms.h
+-
 dlib/gui_widgets.h
 -
 dlib/image_io.h
@@ -1289,6 +1291,8 @@ conditioning_class_kernel_abstract.h
 /usr/local/include/dlib/assert.h
 iostream
 -
+
+/usr/local/include/dlib/config.h
 
 /usr/local/include/dlib/console_progress_indicator.h
 ctime
@@ -7917,8 +7921,6 @@ kdtree_index.h
 /usr/local/include/opencv2/flann/kdtree_index.h
 kmeans_index.h
 /usr/local/include/opencv2/flann/kmeans_index.h
-
-/usr/local/include/opencv2/flann/config.h
 
 /usr/local/include/opencv2/flann/defines.h
 config.h

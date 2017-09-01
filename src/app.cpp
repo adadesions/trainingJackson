@@ -6,6 +6,7 @@
 #include <dlib/image_processing/frontal_face_detector.h>
 #include <dlib/image_processing/render_face_detections.h>
 #include <dlib/image_processing.h>
+#include <dlib/image_transforms.h>
 #include <dlib/gui_widgets.h>
 #include <dlib/image_io.h>
 #include <dlib/opencv.h>
@@ -25,13 +26,13 @@ int main(int argc, char *argv[]) {
   string sp_filename = "./public/shape_predictor_68_face_landmarks.dat";
   shape_predictor sp;
   deserialize(sp_filename) >> sp;
-  array2d<dlib::bgr_pixel> rs(100, 100);
+  array2d<dlib::bgr_pixel> rs(512, 512);
   array2d<dlib::bgr_pixel> img;
 
   // Load and prepare image
   load_image(img, img_filename);
   resize_image(img, rs);
-  pyramid_up(rs);
+  // pyramid_up(rs);
 
   // Setup detector and predictor
   frontal_face_detector detector = get_frontal_face_detector();
@@ -43,7 +44,8 @@ int main(int argc, char *argv[]) {
   if( !cvImg.data ){
     cout << "Image not found!!" << endl;
     return -1;
-  }
+  }  
+  // resize( cvImg, cvImg, Size(512, 512) );
 
   // // Painting circles on face
   // for( int i = 0; i < shape.num_parts(); ++i ){
