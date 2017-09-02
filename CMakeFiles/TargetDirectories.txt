@@ -1,6 +1,0 @@
-/Users/adacodeio/GitHub/trainingJackson/CMakeFiles/rebuild_cache.dir
-/Users/adacodeio/GitHub/trainingJackson/CMakeFiles/edit_cache.dir
-/Users/adacodeio/GitHub/trainingJackson/CMakeFiles/trainingJackson.dir
-/Users/adacodeio/GitHub/trainingJackson/dlib_build/CMakeFiles/rebuild_cache.dir
-/Users/adacodeio/GitHub/trainingJackson/dlib_build/CMakeFiles/edit_cache.dir
-/Users/adacodeio/GitHub/trainingJackson/dlib_build/CMakeFiles/dlib.dir
