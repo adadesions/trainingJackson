@@ -41,5 +41,5 @@ CMakeCache.txt
 ./build/*
 
 # Others
-Makefile
-./.vscode/*
+Makefiles
+.vscode/
