@@ -30,25 +30,6 @@ std::vector<Point2f> getShape( std::string filename, int& num_shapes ) {
 }
 
 int main(int argc, char *argv[]) {
-    std::vector<Point2f> shape;
-    std::vector<std::vector<Point2f>> adj_vector;
-    int num_shapes = 5*2;
-    int num_shapes_filename = 5;
-    for(int i = 1; i <= num_shapes_filename; ++i ) {
-        string left_filename = "./dataset/"+ to_string(i) + "L.yaml";
-        string right_filename = "./dataset/"+ to_string(i) + "R.yaml";
-        std::vector<Point2f> left_shape = getShape(left_filename, num_shapes);
-        std::vector<Point2f> right_shape = getShape(right_filename, num_shapes);
-        adj_vector.push_back(left_shape);
-        adj_vector.push_back(right_shape);
-    }
-    matrix<std::vector<Point2f>> d_mat = dlib::mat(adj_vector);
-    matrix<std::vector<Point2f>, 1, 68> mean_mat;
-    for( int i = 0; i < d_mat.nr(); ++i ){
-        cout << d_mat(i) << endl;
-    }
-    cout << mean_mat << endl;
-  
     // std::vector<Point2f> sum_shape;
     // Point2f sum_point;
     

@@ -38,11 +38,11 @@ CMakeCache.txt
 
 #dlib
 ./dlib_build/*
-./build/*
+build/
 
 # Others
-Makefiles
-.vscode/
+Makefile
+/.vscode
 
 # Specify
 face2yaml/dlib_build/
