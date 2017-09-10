@@ -43,3 +43,9 @@ CMakeCache.txt
 # Others
 Makefiles
 .vscode/
+
+# Specify
+face2yaml/dlib_build/
+face2yaml/dataset/
+face2yaml/CMakeFiles
+AAM/CMakeFiles

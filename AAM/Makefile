@@ -48,10 +48,10 @@ RM = /usr/local/Cellar/cmake/3.7.2/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/adacodeio/GitHub/trainingJackson/face2yaml
+CMAKE_SOURCE_DIR = /Users/adacodeio/GitHub/trainingJackson/AAM
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/adacodeio/GitHub/trainingJackson/face2yaml
+CMAKE_BINARY_DIR = /Users/adacodeio/GitHub/trainingJackson/AAM
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/adacodeio/GitHub/trainingJackson/face2yaml/CMakeFiles /Users/adacodeio/GitHub/trainingJackson/face2yaml/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/adacodeio/GitHub/trainingJackson/AAM/CMakeFiles /Users/adacodeio/GitHub/trainingJackson/AAM/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/adacodeio/GitHub/trainingJackson/face2yaml/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/adacodeio/GitHub/trainingJackson/AAM/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,43 +111,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named testMeanShape
+# Target rules for targets named core_aam
 
 # Build rule for target.
-testMeanShape: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testMeanShape
-.PHONY : testMeanShape
+core_aam: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 core_aam
+.PHONY : core_aam
 
 # fast build rule for target.
-testMeanShape/fast:
-	$(MAKE) -f CMakeFiles/testMeanShape.dir/build.make CMakeFiles/testMeanShape.dir/build
-.PHONY : testMeanShape/fast
+core_aam/fast:
+	$(MAKE) -f CMakeFiles/core_aam.dir/build.make CMakeFiles/core_aam.dir/build
+.PHONY : core_aam/fast
 
 #=============================================================================
-# Target rules for targets named delaunay
+# Target rules for targets named aam
 
 # Build rule for target.
-delaunay: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 delaunay
-.PHONY : delaunay
+aam: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 aam
+.PHONY : aam
 
 # fast build rule for target.
-delaunay/fast:
-	$(MAKE) -f CMakeFiles/delaunay.dir/build.make CMakeFiles/delaunay.dir/build
-.PHONY : delaunay/fast
-
-#=============================================================================
-# Target rules for targets named face2yaml
-
-# Build rule for target.
-face2yaml: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 face2yaml
-.PHONY : face2yaml
-
-# fast build rule for target.
-face2yaml/fast:
-	$(MAKE) -f CMakeFiles/face2yaml.dir/build.make CMakeFiles/face2yaml.dir/build
-.PHONY : face2yaml/fast
+aam/fast:
+	$(MAKE) -f CMakeFiles/aam.dir/build.make CMakeFiles/aam.dir/build
+.PHONY : aam/fast
 
 #=============================================================================
 # Target rules for targets named dlib
@@ -162,86 +149,59 @@ dlib/fast:
 	$(MAKE) -f dlib_build/CMakeFiles/dlib.dir/build.make dlib_build/CMakeFiles/dlib.dir/build
 .PHONY : dlib/fast
 
-src/delaunay.o: src/delaunay.cpp.o
+src/aam.o: src/aam.cpp.o
 
-.PHONY : src/delaunay.o
-
-# target to build an object file
-src/delaunay.cpp.o:
-	$(MAKE) -f CMakeFiles/delaunay.dir/build.make CMakeFiles/delaunay.dir/src/delaunay.cpp.o
-.PHONY : src/delaunay.cpp.o
-
-src/delaunay.i: src/delaunay.cpp.i
-
-.PHONY : src/delaunay.i
-
-# target to preprocess a source file
-src/delaunay.cpp.i:
-	$(MAKE) -f CMakeFiles/delaunay.dir/build.make CMakeFiles/delaunay.dir/src/delaunay.cpp.i
-.PHONY : src/delaunay.cpp.i
-
-src/delaunay.s: src/delaunay.cpp.s
-
-.PHONY : src/delaunay.s
-
-# target to generate assembly for a file
-src/delaunay.cpp.s:
-	$(MAKE) -f CMakeFiles/delaunay.dir/build.make CMakeFiles/delaunay.dir/src/delaunay.cpp.s
-.PHONY : src/delaunay.cpp.s
-
-src/face2yaml.o: src/face2yaml.cpp.o
-
-.PHONY : src/face2yaml.o
+.PHONY : src/aam.o
 
 # target to build an object file
-src/face2yaml.cpp.o:
-	$(MAKE) -f CMakeFiles/face2yaml.dir/build.make CMakeFiles/face2yaml.dir/src/face2yaml.cpp.o
-.PHONY : src/face2yaml.cpp.o
+src/aam.cpp.o:
+	$(MAKE) -f CMakeFiles/aam.dir/build.make CMakeFiles/aam.dir/src/aam.cpp.o
+.PHONY : src/aam.cpp.o
 
-src/face2yaml.i: src/face2yaml.cpp.i
+src/aam.i: src/aam.cpp.i
 
-.PHONY : src/face2yaml.i
+.PHONY : src/aam.i
 
 # target to preprocess a source file
-src/face2yaml.cpp.i:
-	$(MAKE) -f CMakeFiles/face2yaml.dir/build.make CMakeFiles/face2yaml.dir/src/face2yaml.cpp.i
-.PHONY : src/face2yaml.cpp.i
+src/aam.cpp.i:
+	$(MAKE) -f CMakeFiles/aam.dir/build.make CMakeFiles/aam.dir/src/aam.cpp.i
+.PHONY : src/aam.cpp.i
 
-src/face2yaml.s: src/face2yaml.cpp.s
+src/aam.s: src/aam.cpp.s
 
-.PHONY : src/face2yaml.s
+.PHONY : src/aam.s
 
 # target to generate assembly for a file
-src/face2yaml.cpp.s:
-	$(MAKE) -f CMakeFiles/face2yaml.dir/build.make CMakeFiles/face2yaml.dir/src/face2yaml.cpp.s
-.PHONY : src/face2yaml.cpp.s
+src/aam.cpp.s:
+	$(MAKE) -f CMakeFiles/aam.dir/build.make CMakeFiles/aam.dir/src/aam.cpp.s
+.PHONY : src/aam.cpp.s
 
-src/testMeanShape.o: src/testMeanShape.cpp.o
+src/core_aam.o: src/core_aam.cpp.o
 
-.PHONY : src/testMeanShape.o
+.PHONY : src/core_aam.o
 
 # target to build an object file
-src/testMeanShape.cpp.o:
-	$(MAKE) -f CMakeFiles/testMeanShape.dir/build.make CMakeFiles/testMeanShape.dir/src/testMeanShape.cpp.o
-.PHONY : src/testMeanShape.cpp.o
+src/core_aam.cpp.o:
+	$(MAKE) -f CMakeFiles/core_aam.dir/build.make CMakeFiles/core_aam.dir/src/core_aam.cpp.o
+.PHONY : src/core_aam.cpp.o
 
-src/testMeanShape.i: src/testMeanShape.cpp.i
+src/core_aam.i: src/core_aam.cpp.i
 
-.PHONY : src/testMeanShape.i
+.PHONY : src/core_aam.i
 
 # target to preprocess a source file
-src/testMeanShape.cpp.i:
-	$(MAKE) -f CMakeFiles/testMeanShape.dir/build.make CMakeFiles/testMeanShape.dir/src/testMeanShape.cpp.i
-.PHONY : src/testMeanShape.cpp.i
+src/core_aam.cpp.i:
+	$(MAKE) -f CMakeFiles/core_aam.dir/build.make CMakeFiles/core_aam.dir/src/core_aam.cpp.i
+.PHONY : src/core_aam.cpp.i
 
-src/testMeanShape.s: src/testMeanShape.cpp.s
+src/core_aam.s: src/core_aam.cpp.s
 
-.PHONY : src/testMeanShape.s
+.PHONY : src/core_aam.s
 
 # target to generate assembly for a file
-src/testMeanShape.cpp.s:
-	$(MAKE) -f CMakeFiles/testMeanShape.dir/build.make CMakeFiles/testMeanShape.dir/src/testMeanShape.cpp.s
-.PHONY : src/testMeanShape.cpp.s
+src/core_aam.cpp.s:
+	$(MAKE) -f CMakeFiles/core_aam.dir/build.make CMakeFiles/core_aam.dir/src/core_aam.cpp.s
+.PHONY : src/core_aam.cpp.s
 
 # Help Target
 help:
@@ -249,21 +209,17 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... testMeanShape"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... delaunay"
-	@echo "... face2yaml"
+	@echo "... core_aam"
+	@echo "... aam"
 	@echo "... dlib"
-	@echo "... src/delaunay.o"
-	@echo "... src/delaunay.i"
-	@echo "... src/delaunay.s"
-	@echo "... src/face2yaml.o"
-	@echo "... src/face2yaml.i"
-	@echo "... src/face2yaml.s"
-	@echo "... src/testMeanShape.o"
-	@echo "... src/testMeanShape.i"
-	@echo "... src/testMeanShape.s"
+	@echo "... src/aam.o"
+	@echo "... src/aam.i"
+	@echo "... src/aam.s"
+	@echo "... src/core_aam.o"
+	@echo "... src/core_aam.i"
+	@echo "... src/core_aam.s"
 .PHONY : help
 
 

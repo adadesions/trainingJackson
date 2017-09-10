@@ -11,3 +11,5 @@ target_link_libraries( ${PROJECT_NAME} ${OpenCV_LIBS} dlib::dlib)
 add_executable(delaunay ./src/delaunay.cpp)
 target_link_libraries(delaunay  ${OpenCV_LIBS})
 
+add_executable(testMeanShape ./src/testMeanShape.cpp)
+target_link_libraries(testMeanShape  ${OpenCV_LIBS})

@@ -35,7 +35,6 @@ int main(int argc, char *argv[]) {
   // Load and prepare image
   load_image(img, img_filename);
   resize_image(img, rs);
-  // pyramid_up(rs);
 
   // Setup detector and predictor
   frontal_face_detector detector = get_frontal_face_detector();
@@ -48,7 +47,6 @@ int main(int argc, char *argv[]) {
     cout << "Image not found!!" << endl;
     return -1;
   }  
-  // resize( cvImg, cvImg, Size(512, 512) );
 
   // // Painting circles on face
   // for( int i = 0; i < shape.num_parts(); ++i ){
@@ -86,10 +84,12 @@ int main(int argc, char *argv[]) {
   std::vector<int> left_eye, right_eye, left_eyebrow, right_eyebrow;
   std::vector<int> face, mouth, nose;
 
+  std::vector<Point2i> point_store;
   fs << "features" << "[";
   for( int i = 0; i < shape.num_parts(); ++i ){
       int x = shape.part(i).x();
       int y = shape.part(i).y();
+      point_store.push_back( Point2i( x, y ) );
     fs << "{:" << "p" << i << "x" << x << "y" << y << "z" << 0 << "}";
     if( i >= 0 && i <= 16) face.push_back(i);
     else if( i >= 17 && i <= 21) left_eyebrow.push_back(i);
@@ -110,44 +110,29 @@ int main(int argc, char *argv[]) {
   fs << "nose" << nose;
   fs << "mouth" << mouth;
 
-  //Delaunay Triangular
-  // std::vector<Point2f> vertex;
-  // for(int i = 0; i < shape.num_parts(); ++i){
-  //   float x = shape.part(i).x();
-  //   float y = shape.part(i).y();
-  //   vertex.push_back( cv::Point2f(x, y) );
-  // }
-  // Rect rect(0 ,0 , cvImg.cols, cvImg.rows);
-  // Subdiv2D subdiv(rect);
-  // subdiv.insert(vertex);
-  // std::vector<Vec6f> triangleList;
-  // subdiv.getTriangleList(triangleList);
-  // int numOfDelaunay = triangleList.size();
-  // std::vector<std::vector<int>> point_list;
-
-  // for( auto triangle : triangleList ){
-  //   std::vector<int> points = getPointIndex( triangle, vertex, rect );
-  //   if( points[0] < 0 || points[1] < 0 || points[2] < 0)
-  //     continue;
-  //   point_list.push_back(points);
-  // }
-  // for( auto list:point_list ){
-  //   for( auto p:list)
-  //     cout << p << " ";
-  //   cout << endl;
-  // }
-
-  // fs << "numOfDelaunay" << numOfDelaunay;
-  // fs << "delaunay" << "[";
-  // for( int i = 0; i < triangleList.size(); ++i ){
-  //   fs << "{:";
-  //   fs << "t" << i << "points" << triangleList[i];
-  //   fs << "}";
-  // }
-  // fs << "]";
+  FileStorage fs_mean( "./dataset/meanShape.yaml", FileStorage::READ );
+  FileNode delaunay = fs_mean["delaunay"];
+  int t = 0;
+  fs << "delaunay" << "[";
+    for( auto pi:delaunay ){
+      Vec3i index;
+      Vec6f xy;
+      pi["point_index"] >> index;
+      xy[0] = point_store[index[0]].x;
+      xy[1] = point_store[index[0]].y;
+      xy[2] = point_store[index[1]].x;
+      xy[3] = point_store[index[1]].y;
+      xy[4] = point_store[index[2]].x;
+      xy[5] = point_store[index[2]].y;
+      fs << "{:" << "t" << t++;
+      fs << "points" << xy;
+      fs << "}";
+    }
+  fs << "]";
 
   fs << "image" << cvImg;
   fs.release();
+  fs_mean.release();
 
   cout << "[ Done ]" << endl;
 
