@@ -1,5 +1,6 @@
 /Users/adacodeio/GitHub/trainingJackson/face2yaml/CMakeFiles/rebuild_cache.dir
 /Users/adacodeio/GitHub/trainingJackson/face2yaml/CMakeFiles/edit_cache.dir
+/Users/adacodeio/GitHub/trainingJackson/face2yaml/CMakeFiles/delaunay.dir
 /Users/adacodeio/GitHub/trainingJackson/face2yaml/CMakeFiles/face2yaml.dir
 /Users/adacodeio/GitHub/trainingJackson/face2yaml/dlib_build/CMakeFiles/rebuild_cache.dir
 /Users/adacodeio/GitHub/trainingJackson/face2yaml/dlib_build/CMakeFiles/edit_cache.dir

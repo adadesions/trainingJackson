@@ -7,3 +7,7 @@ include(~/GitHub/dlib/dlib/cmake)
 find_package( OpenCV )
 add_executable(${PROJECT_NAME} ./src/${PROJECT_NAME}.cpp)
 target_link_libraries( ${PROJECT_NAME} ${OpenCV_LIBS} dlib::dlib)
+
+add_executable(delaunay ./src/delaunay.cpp)
+target_link_libraries(delaunay  ${OpenCV_LIBS})
+

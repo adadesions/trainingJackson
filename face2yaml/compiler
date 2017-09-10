@@ -3,4 +3,4 @@ cmake . || exit
 make
 ./build/${1} ${2}
 
-# for i in `cat datalist.txt`; do ./build/trainingJackson $i; done
+# for i in `cat datalist.txt`; do ./build/face2yaml $i; done

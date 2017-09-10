@@ -15,6 +15,9 @@ using namespace std;
 using namespace cv;
 using namespace dlib;
 
+// Function Prototype
+std::vector<int> getPointIndex( Vec6f v, std::vector<Point2f> store, Rect bounding );
+
 int main(int argc, char *argv[]) {
   if( argc == 1 ){
     cout << "Need more arguments...Please ask Ada" << endl;
@@ -108,26 +111,40 @@ int main(int argc, char *argv[]) {
   fs << "mouth" << mouth;
 
   //Delaunay Triangular
-  std::vector<Point2f> vertex;
-  for(int i = 0; i < shape.num_parts(); ++i){
-    float x = shape.part(i).x();
-    float y = shape.part(i).y();
-    vertex.push_back( cv::Point2f(x, y) );
-  }
-  Rect rect(0 ,0 , cvImg.cols, cvImg.rows);
-  Subdiv2D subdiv(rect);
-  subdiv.insert(vertex);
-  std::vector<Vec6f> triangleList;
-  subdiv.getTriangleList(triangleList);
-  int numOfDelaunay = triangleList.size();
-  fs << "numOfDelaunay" << numOfDelaunay;
-  fs << "delaunay" << "[";
-  for( int i = 0; i < triangleList.size(); ++i ){
-    fs << "{:";
-    fs << "t" << i << "points" << triangleList[i];
-    fs << "}";
-  }
-  fs << "]";
+  // std::vector<Point2f> vertex;
+  // for(int i = 0; i < shape.num_parts(); ++i){
+  //   float x = shape.part(i).x();
+  //   float y = shape.part(i).y();
+  //   vertex.push_back( cv::Point2f(x, y) );
+  // }
+  // Rect rect(0 ,0 , cvImg.cols, cvImg.rows);
+  // Subdiv2D subdiv(rect);
+  // subdiv.insert(vertex);
+  // std::vector<Vec6f> triangleList;
+  // subdiv.getTriangleList(triangleList);
+  // int numOfDelaunay = triangleList.size();
+  // std::vector<std::vector<int>> point_list;
+
+  // for( auto triangle : triangleList ){
+  //   std::vector<int> points = getPointIndex( triangle, vertex, rect );
+  //   if( points[0] < 0 || points[1] < 0 || points[2] < 0)
+  //     continue;
+  //   point_list.push_back(points);
+  // }
+  // for( auto list:point_list ){
+  //   for( auto p:list)
+  //     cout << p << " ";
+  //   cout << endl;
+  // }
+
+  // fs << "numOfDelaunay" << numOfDelaunay;
+  // fs << "delaunay" << "[";
+  // for( int i = 0; i < triangleList.size(); ++i ){
+  //   fs << "{:";
+  //   fs << "t" << i << "points" << triangleList[i];
+  //   fs << "}";
+  // }
+  // fs << "]";
 
   fs << "image" << cvImg;
   fs.release();
@@ -135,4 +152,28 @@ int main(int argc, char *argv[]) {
   cout << "[ Done ]" << endl;
 
   return 0;
+}
+
+// Functions
+std::vector<int> getPointIndex( Vec6f v, std::vector<Point2f> store, Rect bounding ) {
+  std::vector<int> pointIndex(3, -1);
+  std::vector<Point2f> vt(3, Point2f(0, 0));
+  vt[0] = Point2f( v[0], v[1] );
+  vt[1] = Point2f( v[2], v[3] );
+  vt[2] = Point2f( v[4], v[5] );
+ 
+ for(int i = 0; i < store.size(); ++i) {
+   if( bounding.contains(vt[0]) && bounding.contains(vt[1]) && bounding.contains(vt[2]) ){
+    if( vt[0] == store[i] )
+      pointIndex[0] = i;
+    else if( vt[1] == store[i] )
+      pointIndex[1] = i;
+    else if( vt[2] == store[i] )
+      pointIndex[2] = i;
+   }
+
+   if( pointIndex[0]  > -1 && pointIndex[1] > -1 && pointIndex[2] > -1)
+    break;
+ } 
+ return pointIndex;
 }
