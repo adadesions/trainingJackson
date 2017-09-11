@@ -1,7 +1,0 @@
-/Users/adacodeio/GitHub/trainingJackson/AAM/CMakeFiles/rebuild_cache.dir
-/Users/adacodeio/GitHub/trainingJackson/AAM/CMakeFiles/edit_cache.dir
-/Users/adacodeio/GitHub/trainingJackson/AAM/CMakeFiles/core_aam.dir
-/Users/adacodeio/GitHub/trainingJackson/AAM/CMakeFiles/aam.dir
-/Users/adacodeio/GitHub/trainingJackson/AAM/dlib_build/CMakeFiles/rebuild_cache.dir
-/Users/adacodeio/GitHub/trainingJackson/AAM/dlib_build/CMakeFiles/edit_cache.dir
-/Users/adacodeio/GitHub/trainingJackson/AAM/dlib_build/CMakeFiles/dlib.dir

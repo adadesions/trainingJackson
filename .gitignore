@@ -34,7 +34,7 @@
 # CMake
 CMakeCache.txt
 *.cmake
-./CMakeFiles/*
+CMakeFiles
 
 #dlib
 ./dlib_build/*
